@@ -199,3 +199,27 @@ input, textarea, select {
   }
 }
 
+.split-row {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+}
+
+.split-img, .split-content {
+  flex: 1;
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+  .split-row {
+    flex-direction: row;
+  }
+  .split-row.reverse {
+    flex-direction: row-reverse;
+  }
+  .split-img {
+    aspect-ratio: 4/3;
+  }
+}
+

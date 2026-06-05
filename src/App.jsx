@@ -7,6 +7,7 @@ import ServicesSection from './components/sections/ServicesSection';
 import HowItWorks from './components/sections/HowItWorks';
 import PricingGuide from './components/sections/PricingGuide';
 import Gallery from './components/sections/Gallery';
+import BeforeAfterSection from './components/sections/BeforeAfterSection';
 import FinalCTA from './components/sections/FinalCTA';
 import Modal from './components/ui/Modal';
 import ScheduleForm from './components/forms/ScheduleForm';
@@ -36,13 +37,19 @@ function App() {
       <Navbar onOpenQuote={openQuote} onOpenSchedule={openSchedule} />
       
       <main>
-        <HeroSection onOpenQuote={openQuote} onOpenSchedule={openSchedule} />
+        <HeroSection 
+          onOpenQuote={() => setActiveModal('quote')} 
+          onOpenSchedule={() => setActiveModal('schedule')} 
+        />
         <TrustBar />
-        <ServicesSection />
+        <ServicesSection onOpenQuote={() => setActiveModal('quote')} />
         <HowItWorks />
         <PricingGuide />
+        <BeforeAfterSection />
         <Gallery />
-        <FinalCTA onOpenQuote={openQuote} onOpenSchedule={openSchedule} />
+        <FinalCTA 
+          onOpenQuote={() => setActiveModal('quote')} 
+        />
       </main>
 
       <Footer />

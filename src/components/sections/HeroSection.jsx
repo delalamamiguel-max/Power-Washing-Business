@@ -8,7 +8,7 @@ const HeroSection = ({ onOpenQuote, onOpenSchedule }) => {
         <div style={styles.content}>
           <h1 style={styles.headline}>Make Your Property Shine Like New</h1>
           <p style={styles.subhead}>
-            Premium residential and commercial power washing. Fast, friendly, and satisfaction guaranteed.
+            Premium residential and commercial exterior power washing. Fast, friendly, and satisfaction guaranteed.
           </p>
           <div style={styles.actions}>
             <GlassButton variant="primary" onClick={onOpenQuote} style={{ fontSize: '1.1rem', padding: '1rem 2rem' }}>
@@ -31,7 +31,7 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    background: 'url("https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80") center/cover no-repeat',
+    background: 'url("https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&q=80") center/cover no-repeat', // Practical, realistic house exterior
   },
   container: {
     position: 'relative',

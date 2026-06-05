@@ -1,17 +1,17 @@
 import React from 'react';
-import GlassCard from '../ui/GlassCard';
-import { Home, Building2, CheckCircle2 } from 'lucide-react';
+import GlassButton from '../ui/GlassButton';
+import { CheckCircle2 } from 'lucide-react';
 
-const ServicesSection = () => {
+const ServicesSection = ({ onOpenQuote }) => {
   const residential = [
     'Driveways', 'Full exterior house washing', 'Roof washing', 
     'Patios and decks', 'Walkways', 'Pool areas', 
-    'Gutters', 'Windows/exterior glass', 'Mold, algae, mildew & stain removal'
+    'Gutters', 'Windows / exterior glass', 'Mold, algae, mildew & stain removal'
   ];
 
   const commercial = [
     'Storefronts', 'Building exteriors', 'Sidewalks', 
-    'Parking lots', 'Entryways', 'Multi-family/HOA exterior cleaning', 
+    'Parking lots', 'Entryways', 'Multi-family / HOA exterior cleaning', 
     'Routine maintenance cleaning'
   ];
 
@@ -25,83 +25,91 @@ const ServicesSection = () => {
           </p>
         </div>
 
-        <div className="grid-cards">
-          <GlassCard hoverEffect padding="3rem" style={{ borderTop: '4px solid var(--color-aqua)' }}>
-            <div style={styles.cardHeader}>
-              <div style={styles.iconWrapper}>
-                <Home size={32} color="var(--color-aqua)" />
-              </div>
-              <h3>Residential Power Washing</h3>
-              <p>Improve curb appeal and protect your home's exterior surfaces.</p>
-            </div>
+        {/* Residential Row */}
+        <div className="split-row" style={{ marginBottom: '6rem' }}>
+          <div className="split-img">
+            <img 
+              src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&q=80" 
+              alt="Residential exterior power washing" 
+              style={styles.img}
+            />
+          </div>
+          <div className="split-content">
+            <h3 style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>Residential Exterior Cleaning</h3>
+            <p style={{ marginBottom: '1.5rem', color: 'var(--color-text-light)' }}>
+              Restore your home's curb appeal safely and effectively. We treat every home like our own, ensuring delicate surfaces are washed gently and tough concrete is power washed thoroughly.
+            </p>
             <ul style={styles.list}>
               {residential.map((item, idx) => (
                 <li key={idx} style={styles.listItem}>
-                  <CheckCircle2 size={18} color="var(--color-green-accent)" style={{ flexShrink: 0 }} />
+                  <CheckCircle2 size={18} color="var(--color-aqua)" style={{ flexShrink: 0 }} />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
-          </GlassCard>
-
-          <GlassCard hoverEffect padding="3rem" style={{ borderTop: '4px solid var(--color-text-main)' }}>
-            <div style={styles.cardHeader}>
-              <div style={styles.iconWrapperDark}>
-                <Building2 size={32} color="var(--color-text-main)" />
-              </div>
-              <h3>Commercial Power Washing</h3>
-              <p>Improve customer perception, safety, and property maintenance.</p>
+            <div style={{ marginTop: '2rem' }}>
+              <GlassButton variant="primary" onClick={onOpenQuote}>
+                Get a Free Quote
+              </GlassButton>
             </div>
+          </div>
+        </div>
+
+        {/* Commercial Row */}
+        <div className="split-row reverse">
+          <div className="split-content">
+            <h3 style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>Commercial Exterior Cleaning</h3>
+            <p style={{ marginBottom: '1.5rem', color: 'var(--color-text-light)' }}>
+              Make a great first impression. We handle high-traffic areas, large buildings, and routine maintenance to keep your business looking professional and inviting year-round.
+            </p>
             <ul style={styles.list}>
               {commercial.map((item, idx) => (
                 <li key={idx} style={styles.listItem}>
-                  <CheckCircle2 size={18} color="var(--color-green-accent)" style={{ flexShrink: 0 }} />
+                  <CheckCircle2 size={18} color="var(--color-aqua)" style={{ flexShrink: 0 }} />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
-          </GlassCard>
+            <div style={{ marginTop: '2rem' }}>
+              <GlassButton variant="primary" onClick={onOpenQuote}>
+                Get a Free Quote
+              </GlassButton>
+            </div>
+          </div>
+          <div className="split-img">
+            <img 
+              src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80" 
+              alt="Commercial storefront and parking lot power washing" 
+              style={styles.img}
+            />
+          </div>
         </div>
+
       </div>
     </section>
   );
 };
 
 const styles = {
-  cardHeader: {
-    marginBottom: '2rem',
-  },
-  iconWrapper: {
-    width: '64px',
-    height: '64px',
-    borderRadius: '16px',
-    backgroundColor: 'var(--color-light-blue)',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: '1.5rem',
-  },
-  iconWrapperDark: {
-    width: '64px',
-    height: '64px',
-    borderRadius: '16px',
-    backgroundColor: 'var(--color-soft-gray)',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: '1.5rem',
+  img: {
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
+    borderRadius: 'var(--radius-lg)',
+    boxShadow: 'var(--glass-shadow)',
   },
   list: {
     listStyle: 'none',
     display: 'flex',
     flexDirection: 'column',
-    gap: '1rem',
+    gap: '0.75rem',
   },
   listItem: {
     display: 'flex',
     alignItems: 'center',
     gap: '0.75rem',
     color: 'var(--color-text-main)',
+    fontWeight: '500',
   }
 };
 

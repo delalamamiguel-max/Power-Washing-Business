@@ -17,26 +17,16 @@ const ScheduleForm = ({ onSuccess }) => {
     <form onSubmit={handleSubmit} style={styles.form}>
       <div className="form-row">
         <div style={styles.group}>
-          <label style={styles.label}>Preference</label>
+          <label style={styles.label}>Name</label>
+          <input type="text" placeholder="Your Name" style={styles.input} required />
+        </div>
+        <div style={styles.group}>
+          <label style={styles.label}>Property Type</label>
           <select style={styles.input} required>
-            <option value="visit">Schedule a Visit</option>
-            <option value="call">Schedule a Call</option>
+            <option value="residential">Residential</option>
+            <option value="commercial">Commercial</option>
           </select>
         </div>
-      </div>
-      <div className="form-row">
-        <div style={styles.group}>
-          <label style={styles.label}>Date</label>
-          <input type="date" style={styles.input} required />
-        </div>
-        <div style={styles.group}>
-          <label style={styles.label}>Time</label>
-          <input type="time" style={styles.input} required />
-        </div>
-      </div>
-      <div style={styles.group}>
-        <label style={styles.label}>Name</label>
-        <input type="text" placeholder="John Doe" style={styles.input} required />
       </div>
       <div className="form-row">
         <div style={styles.group}>
@@ -45,20 +35,36 @@ const ScheduleForm = ({ onSuccess }) => {
         </div>
         <div style={styles.group}>
           <label style={styles.label}>Email</label>
-          <input type="email" placeholder="john@example.com" style={styles.input} required />
+          <input type="email" placeholder="you@example.com" style={styles.input} required />
+        </div>
+      </div>
+      <div className="form-row">
+        <div style={styles.group}>
+          <label style={styles.label}>Preferred Date</label>
+          <input type="date" style={styles.input} required />
+        </div>
+        <div style={styles.group}>
+          <label style={styles.label}>Preferred Time Window</label>
+          <select style={styles.input} required>
+            <option value="morning">Morning (8am - 12pm)</option>
+            <option value="afternoon">Afternoon (12pm - 4pm)</option>
+            <option value="flexible">Flexible</option>
+          </select>
         </div>
       </div>
       <div style={styles.group}>
-        <label style={styles.label}>Address</label>
+        <label style={styles.label}>Address / Service Area</label>
         <input type="text" placeholder="123 Main St, Austin, TX" style={styles.input} required />
       </div>
       <div style={styles.group}>
-        <label style={styles.label}>Notes</label>
-        <textarea rows={3} placeholder="Any special instructions or areas of concern?" style={styles.input}></textarea>
+        <label style={styles.label}>Optional Notes / Details</label>
+        <textarea rows={2} placeholder="Any specific instructions?" style={styles.input}></textarea>
       </div>
-      <GlassButton type="submit" variant="primary" style={{ width: '100%', marginTop: '1rem' }} disabled={loading}>
-        {loading ? 'Submitting...' : 'Confirm Schedule'}
-      </GlassButton>
+      <div style={styles.actions}>
+        <GlassButton type="submit" variant="primary" style={{ width: '100%', padding: '1rem' }} disabled={loading}>
+          {loading ? 'Submitting...' : 'Schedule Visit'}
+        </GlassButton>
+      </div>
     </form>
   );
 };
@@ -67,7 +73,7 @@ const styles = {
   form: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '1rem',
+    gap: '1.25rem',
   },
   group: {
     display: 'flex',
@@ -83,9 +89,13 @@ const styles = {
     padding: '0.75rem',
     borderRadius: 'var(--radius-sm)',
     border: '1px solid var(--color-soft-gray)',
-    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+    backgroundColor: 'rgba(255, 255, 255, 0.9)',
     outline: 'none',
     transition: 'border-color 0.2s',
+    fontFamily: 'inherit',
+  },
+  actions: {
+    marginTop: '0.5rem',
   }
 };
 
