@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Colors */
+  --color-white: #ffffff;
+  --color-off-white: #f8fafc;
+  --color-soft-gray: #e2e8f0;
+  --color-light-blue: #f0f9ff;
+  --color-blue-accent: #bae6fd;
+  --color-aqua: #0ea5e9;
+  --color-aqua-dark: #0284c7;
+  --color-green-accent: #10b981;
+  --color-text-main: #0f172a;
+  --color-text-light: #475569;
+
+  /* Glassmorphism Variables */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-bg-hover: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.6);
+  --glass-shadow: 0 8px 32px 0 rgba(14, 165, 233, 0.05);
+  --glass-shadow-hover: 0 12px 48px 0 rgba(14, 165, 233, 0.1);
+  --glass-blur: blur(16px);
+
+  /* Spacing & Radii */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+  
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 8rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  color: var(--color-text-main);
+  background-color: var(--color-off-white);
+  /* Very soft background gradient for depth */
+  background-image: linear-gradient(135deg, var(--color-off-white) 0%, var(--color-light-blue) 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text-main);
+}
+
+p {
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-sm);
+}
+
+a {
+  color: var(--color-aqua);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-aqua-dark);
+}
+
+/* Glassmorphism Utility Classes */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: var(--radius-lg);
+  transition: all 0.3s ease;
+}
+
+/* Layout Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.section {
+  padding: var(--spacing-xl) 0;
+}
+
+/* Base styles to prevent scrollbar issues with modals */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* Modern clean inputs */
+input, textarea, select {
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Accessibility / Screen Reader Only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
