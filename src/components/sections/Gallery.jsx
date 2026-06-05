@@ -2,10 +2,10 @@ import React from 'react';
 
 const Gallery = () => {
   const images = [
-    { src: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80', alt: 'Full exterior house washing' },
-    { src: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80', alt: 'Clean driveway and walkways' },
-    { src: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80', alt: 'Commercial building exterior cleaning' },
-    { src: 'https://images.unsplash.com/photo-1576013551627-1430992080a9?auto=format&fit=crop&q=80', alt: 'Clean patio and pool area' },
+    { src: 'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&q=80', alt: 'Clean residential driveway' },
+    { src: 'https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&q=80', alt: 'House exterior and siding washing' },
+    { src: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80', alt: 'Commercial building exterior cleaning' },
+    { src: 'https://images.unsplash.com/photo-1576013551627-1430992080a9?auto=format&fit=crop&q=80', alt: 'Clean patio and pool deck' },
   ];
 
   return (

@@ -11,8 +11,8 @@ const BeforeAfterSection = () => {
         </div>
         <div style={{ maxWidth: '900px', margin: '0 auto', aspectRatio: '16/9' }}>
           <BeforeAfterSlider 
-            beforeImage="https://images.unsplash.com/photo-1595844730298-b960fad97351?auto=format&fit=crop&q=80" 
-            afterImage="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80"
+            beforeImage="/slider-before.png" 
+            afterImage="/slider-after.png"
           />
         </div>
       </div>

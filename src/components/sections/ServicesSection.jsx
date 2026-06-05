@@ -29,8 +29,8 @@ const ServicesSection = ({ onOpenQuote }) => {
         <div className="split-row" style={{ marginBottom: '6rem' }}>
           <div className="split-img">
             <img 
-              src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&q=80" 
-              alt="Residential exterior power washing" 
+              src="/residential.png" 
+              alt="Residential driveway pressure washing" 
               style={styles.img}
             />
           </div>
@@ -78,8 +78,8 @@ const ServicesSection = ({ onOpenQuote }) => {
           </div>
           <div className="split-img">
             <img 
-              src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80" 
-              alt="Commercial storefront and parking lot power washing" 
+              src="/commercial.png" 
+              alt="Commercial storefront and sidewalk cleaning" 
               style={styles.img}
             />
           </div>
