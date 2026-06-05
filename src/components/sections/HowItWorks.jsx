@@ -1,11 +1,10 @@
 import React from 'react';
-import GlassCard from '../ui/GlassCard';
 
 const HowItWorks = () => {
   const steps = [
     { num: '1', title: 'Request a Quote', desc: 'Fill out our fast online form or give us a call.' },
     { num: '2', title: 'Schedule a Visit', desc: 'We\'ll confirm the scope and provide a transparent price.' },
-    { num: '3', title: 'We Do the Work', desc: 'Our pros arrive on time with the best equipment.' },
+    { num: '3', title: 'We Do the Work', desc: 'Our pros arrive on time with the best exterior equipment.' },
     { num: '4', title: 'Enjoy the Results', desc: 'Your property looks pristine and welcoming.' },
   ];
 
@@ -16,7 +15,7 @@ const HowItWorks = () => {
           <h2>How It Works</h2>
           <p>Four simple steps to a cleaner property.</p>
         </div>
-        <div style={styles.grid}>
+        <div className="grid-steps">
           {steps.map((step, idx) => (
             <div key={idx} style={styles.step}>
               <div style={styles.number}>{step.num}</div>
@@ -31,12 +30,6 @@ const HowItWorks = () => {
 };
 
 const styles = {
-  grid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-    gap: '2rem',
-    position: 'relative',
-  },
   step: {
     textAlign: 'center',
     padding: '1rem',

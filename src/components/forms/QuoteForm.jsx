@@ -19,7 +19,7 @@ const QuoteForm = ({ onSuccess }) => {
         <label style={styles.label}>Name</label>
         <input type="text" placeholder="Your Name" style={styles.input} required />
       </div>
-      <div style={styles.row}>
+      <div className="form-row">
         <div style={styles.group}>
           <label style={styles.label}>Phone</label>
           <input type="tel" placeholder="(555) 123-4567" style={styles.input} required />
@@ -33,7 +33,7 @@ const QuoteForm = ({ onSuccess }) => {
         <label style={styles.label}>Property Address</label>
         <input type="text" placeholder="Full Address" style={styles.input} required />
       </div>
-      <div style={styles.row}>
+      <div className="form-row">
         <div style={styles.group}>
           <label style={styles.label}>Service Type</label>
           <select style={styles.input} required>
@@ -51,10 +51,10 @@ const QuoteForm = ({ onSuccess }) => {
           </select>
         </div>
       </div>
-      <div style={styles.row}>
+      <div className="form-row">
         <div style={styles.group}>
-          <label style={styles.label}>Surface Types</label>
-          <input type="text" placeholder="e.g. Concrete, Brick, Siding" style={styles.input} required />
+          <label style={styles.label}>Exterior Surfaces</label>
+          <input type="text" placeholder="e.g. Concrete, Brick, Siding, Roof" style={styles.input} required />
         </div>
         <div style={styles.group}>
           <label style={styles.label}>Approx. Size (sq ft)</label>
@@ -71,7 +71,7 @@ const QuoteForm = ({ onSuccess }) => {
       </div>
       <div style={styles.group}>
         <label style={styles.label}>Additional Notes</label>
-        <textarea rows={3} placeholder="Please describe the project in more detail..." style={styles.input}></textarea>
+        <textarea rows={3} placeholder="Please describe the exterior project in more detail..." style={styles.input}></textarea>
       </div>
       <GlassButton type="submit" variant="primary" style={{ width: '100%', marginTop: '1rem' }} disabled={loading}>
         {loading ? 'Submitting...' : 'Request Quote'}
@@ -84,11 +84,6 @@ const styles = {
   form: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '1rem',
-  },
-  row: {
-    display: 'grid',
-    gridTemplateColumns: '1fr 1fr',
     gap: '1rem',
   },
   group: {

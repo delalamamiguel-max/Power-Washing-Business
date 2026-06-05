@@ -5,13 +5,13 @@ import { Droplets } from 'lucide-react';
 const Navbar = ({ onOpenQuote, onOpenSchedule }) => {
   return (
     <nav style={styles.nav}>
-      <div className="container" style={styles.container}>
+      <div className="container nav-container">
         <div style={styles.logo}>
           <Droplets size={28} color="var(--color-aqua)" />
           <span style={styles.brandName}>AquaWash Pro</span>
         </div>
         
-        <div style={styles.actions}>
+        <div className="nav-actions">
           <GlassButton variant="secondary" onClick={onOpenSchedule}>
             Schedule Visit
           </GlassButton>
@@ -34,12 +34,6 @@ const styles = {
     WebkitBackdropFilter: 'var(--glass-blur)',
     borderBottom: '1px solid var(--glass-border)',
   },
-  container: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    height: '80px',
-  },
   logo: {
     display: 'flex',
     alignItems: 'center',
@@ -51,10 +45,6 @@ const styles = {
     fontWeight: '800',
     color: 'var(--color-text-main)',
     letterSpacing: '-0.5px',
-  },
-  actions: {
-    display: 'flex',
-    gap: '1rem',
   }
 };
 

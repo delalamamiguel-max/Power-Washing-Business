@@ -15,7 +15,7 @@ const ScheduleForm = ({ onSuccess }) => {
 
   return (
     <form onSubmit={handleSubmit} style={styles.form}>
-      <div style={styles.row}>
+      <div className="form-row">
         <div style={styles.group}>
           <label style={styles.label}>Preference</label>
           <select style={styles.input} required>
@@ -24,7 +24,7 @@ const ScheduleForm = ({ onSuccess }) => {
           </select>
         </div>
       </div>
-      <div style={styles.row}>
+      <div className="form-row">
         <div style={styles.group}>
           <label style={styles.label}>Date</label>
           <input type="date" style={styles.input} required />
@@ -38,7 +38,7 @@ const ScheduleForm = ({ onSuccess }) => {
         <label style={styles.label}>Name</label>
         <input type="text" placeholder="John Doe" style={styles.input} required />
       </div>
-      <div style={styles.row}>
+      <div className="form-row">
         <div style={styles.group}>
           <label style={styles.label}>Phone</label>
           <input type="tel" placeholder="(555) 123-4567" style={styles.input} required />
@@ -67,11 +67,6 @@ const styles = {
   form: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '1rem',
-  },
-  row: {
-    display: 'grid',
-    gridTemplateColumns: '1fr 1fr',
     gap: '1rem',
   },
   group: {

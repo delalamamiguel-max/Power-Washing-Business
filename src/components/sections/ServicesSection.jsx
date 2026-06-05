@@ -4,13 +4,15 @@ import { Home, Building2, CheckCircle2 } from 'lucide-react';
 
 const ServicesSection = () => {
   const residential = [
-    'House washing', 'Driveway & concrete cleaning', 'Patio cleaning', 
-    'Deck & fence cleaning', 'Gutter exterior cleaning', 'Soft washing for delicate surfaces'
+    'Driveways', 'Full exterior house washing', 'Roof washing', 
+    'Patios and decks', 'Walkways', 'Pool areas', 
+    'Gutters', 'Windows/exterior glass', 'Mold, algae, mildew & stain removal'
   ];
 
   const commercial = [
-    'Storefront cleaning', 'Sidewalk cleaning', 'Building exterior washing', 
-    'Dumpster pad cleaning', 'Parking lot & garage cleaning', 'HOA & property management cleaning'
+    'Storefronts', 'Building exteriors', 'Sidewalks', 
+    'Parking lots', 'Entryways', 'Multi-family/HOA exterior cleaning', 
+    'Routine maintenance cleaning'
   ];
 
   return (
@@ -19,18 +21,18 @@ const ServicesSection = () => {
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
           <h2>Premium Power Washing Services</h2>
           <p style={{ maxWidth: '600px', margin: '0 auto' }}>
-            We specialize in bringing out the best in your property, using safe methods for every surface.
+            We specialize in bringing out the best in your property's exterior, using safe methods for every surface.
           </p>
         </div>
 
-        <div style={styles.grid}>
+        <div className="grid-cards">
           <GlassCard hoverEffect padding="3rem" style={{ borderTop: '4px solid var(--color-aqua)' }}>
             <div style={styles.cardHeader}>
               <div style={styles.iconWrapper}>
                 <Home size={32} color="var(--color-aqua)" />
               </div>
               <h3>Residential Power Washing</h3>
-              <p>Improve curb appeal and protect your home's surfaces.</p>
+              <p>Improve curb appeal and protect your home's exterior surfaces.</p>
             </div>
             <ul style={styles.list}>
               {residential.map((item, idx) => (
@@ -66,11 +68,6 @@ const ServicesSection = () => {
 };
 
 const styles = {
-  grid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-    gap: '2rem',
-  },
   cardHeader: {
     marginBottom: '2rem',
   },

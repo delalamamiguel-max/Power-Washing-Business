@@ -7,9 +7,9 @@ const PricingGuide = () => {
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
           <h2>Simple, Transparent Pricing</h2>
-          <p>No hidden fees. Every property is unique, but here is what you can expect.</p>
+          <p>No hidden fees. Every exterior project is unique, but here is what you can expect.</p>
         </div>
-        <div style={styles.grid}>
+        <div className="grid-cards" style={{ maxWidth: '800px', margin: '0 auto' }}>
           <GlassCard padding="3rem" style={{ textAlign: 'center' }}>
             <h3 style={{ marginBottom: '0.5rem' }}>Residential</h3>
             <div style={styles.price}>
@@ -20,7 +20,7 @@ const PricingGuide = () => {
             <p style={{ marginBottom: '2rem' }}>Starting price for basic driveway or patio cleaning.</p>
             <ul style={styles.factors}>
               <li>Final price based on square footage</li>
-              <li>Type of surface</li>
+              <li>Type of exterior surface</li>
               <li>Level of buildup</li>
             </ul>
           </GlassCard>
@@ -44,13 +44,6 @@ const PricingGuide = () => {
 };
 
 const styles = {
-  grid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-    gap: '2rem',
-    maxWidth: '800px',
-    margin: '0 auto',
-  },
   price: {
     display: 'flex',
     alignItems: 'flex-start',
