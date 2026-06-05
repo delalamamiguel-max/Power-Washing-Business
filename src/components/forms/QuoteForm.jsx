@@ -2,9 +2,13 @@ import React, { useState } from 'react';
 import GlassButton from '../ui/GlassButton';
 
 const QuoteForm = ({ onSuccess }) => {
+  const { t } = useLanguage();
+
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = (e) => {
+  const { t } = useLanguage();
+
     e.preventDefault();
     setLoading(true);
     setTimeout(() => {
@@ -37,8 +41,8 @@ const QuoteForm = ({ onSuccess }) => {
         <div style={styles.group}>
           <label style={styles.label}>Service Type</label>
           <select style={styles.input} required>
-            <option value="residential">Residential</option>
-            <option value="commercial">Commercial</option>
+            <option value="residential">{t('priceResTitle')}</option>
+            <option value="commercial">{t('priceComTitle')}</option>
           </select>
         </div>
         <div style={styles.group}>

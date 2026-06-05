@@ -56,7 +56,9 @@ const BeforeAfterSlider = ({ beforeImage, afterImage }) => {
         style={{...styles.image, ...styles.afterImage, clipPath: `inset(0 0 0 ${sliderPosition}%)`}} 
         draggable="false"
       />
-      <div style={{...styles.labelAfter, clipPath: `inset(0 0 0 ${sliderPosition}%)`}}>After</div>
+      <div style={{...styles.fullOverlay, clipPath: `inset(0 0 0 ${sliderPosition}%)`}}>
+        <div style={styles.labelAfter}>After</div>
+      </div>
 
       {/* Slider Handle */}
       <div style={{...styles.sliderHandle, left: `${sliderPosition}%`}}>
@@ -95,6 +97,15 @@ const styles = {
     position: 'absolute',
     top: 0,
     left: 0,
+  },
+  fullOverlay: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    pointerEvents: 'none',
+    zIndex: 2,
   },
   sliderHandle: {
     position: 'absolute',

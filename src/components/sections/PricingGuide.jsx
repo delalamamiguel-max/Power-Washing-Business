@@ -1,57 +1,60 @@
 import React from 'react';
+import { useLanguage } from '../../context/LanguageContext';
 import GlassCard from '../ui/GlassCard';
 
 const PricingGuide = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="section">
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-          <h2>Simple, Transparent Pricing</h2>
-          <p>No hidden fees. Every exterior project is unique, but here is what you can expect.</p>
+          <h2>{t('priceTitle')}</h2>
+          <p>{t('priceSubtitle')}</p>
         </div>
         <div className="grid-cards" style={{ maxWidth: '850px', margin: '0 auto' }}>
           <GlassCard padding="3rem 2.5rem" style={{ textAlign: 'center' }}>
-            <h3 style={{ marginBottom: '0.5rem' }}>Residential</h3>
+            <h3 style={{ marginBottom: '0.5rem' }}>{t('priceResTitle')}</h3>
             <div style={styles.price}>
               <span style={styles.currency}>$</span>
               <span style={styles.amount}>149</span>
               <span style={styles.plus}>+</span>
             </div>
-            <p style={styles.subtitle}>Starting price for basic driveway or patio cleaning.</p>
+            <p style={styles.subtitle}>{t('priceResDesc')}</p>
             <ul style={styles.factors}>
               <li style={styles.listItem}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-aqua)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={styles.icon}><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Final price based on square footage</span>
+                <span>{t('priceResItem1')}</span>
               </li>
               <li style={styles.listItem}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-aqua)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={styles.icon}><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Type of exterior surface</span>
+                <span>{t('priceResItem2')}</span>
               </li>
               <li style={styles.listItem}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-aqua)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={styles.icon}><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Level of buildup</span>
+                <span>{t('priceResItem3')}</span>
               </li>
             </ul>
           </GlassCard>
 
           <GlassCard padding="3rem 2.5rem" style={{ textAlign: 'center' }}>
-            <h3 style={{ marginBottom: '0.5rem' }}>Commercial</h3>
+            <h3 style={{ marginBottom: '0.5rem' }}>{t('priceComTitle')}</h3>
             <div style={styles.price}>
-              <span style={{ fontSize: '2.5rem', fontWeight: '800', lineHeight: '1.4' }}>Custom Quote</span>
+              <span style={{ fontSize: '2.5rem', fontWeight: '800', lineHeight: '1.4' }}>{t('priceComQuote')}</span>
             </div>
-            <p style={styles.subtitle}>Tailored to your specific property needs.</p>
+            <p style={styles.subtitle}>{t('priceComDesc')}</p>
             <ul style={styles.factors}>
               <li style={styles.listItem}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-aqua)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={styles.icon}><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Building size and height</span>
+                <span>{t('priceComItem1')}</span>
               </li>
               <li style={styles.listItem}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-aqua)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={styles.icon}><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Water access and drainage</span>
+                <span>{t('priceComItem2')}</span>
               </li>
               <li style={styles.listItem}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-aqua)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={styles.icon}><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Frequency of service</span>
+                <span>{t('priceComItem3')}</span>
               </li>
             </ul>
           </GlassCard>

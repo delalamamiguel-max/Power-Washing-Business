@@ -1,7 +1,10 @@
 import React from 'react';
+import { useLanguage } from '../../context/LanguageContext';
 import { Droplets, Phone, Mail, MapPin } from 'lucide-react';
 
 const Footer = () => {
+  const { t } = useLanguage();
+
   return (
     <footer style={styles.footer}>
       <div className="container" style={styles.container}>
@@ -19,7 +22,7 @@ const Footer = () => {
           <h4 style={{ marginBottom: '1rem' }}>Contact Us</h4>
           <div style={styles.contactItem}>
             <Phone size={18} color="var(--color-aqua)" />
-            <span>(555) 123-4567</span>
+            <span>{t('footerPhone')}</span>
           </div>
           <div style={styles.contactItem}>
             <Mail size={18} color="var(--color-aqua)" />

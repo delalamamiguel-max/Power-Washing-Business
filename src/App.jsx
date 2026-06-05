@@ -13,9 +13,11 @@ import Modal from './components/ui/Modal';
 import ScheduleForm from './components/forms/ScheduleForm';
 import QuoteForm from './components/forms/QuoteForm';
 import { CheckCircle } from 'lucide-react';
+import { useLanguage } from './context/LanguageContext';
 
 function App() {
   const [activeModal, setActiveModal] = useState(null); // 'quote', 'schedule', 'quote-success', 'schedule-success'
+  const { t } = useLanguage();
 
   const openQuote = () => setActiveModal('quote');
   const openSchedule = () => setActiveModal('schedule');
@@ -55,22 +57,22 @@ function App() {
       <Footer />
 
       {/* Quote Modal */}
-      <Modal isOpen={activeModal === 'quote'} onClose={closeModal} title="Get a Free Quote">
+      <Modal isOpen={activeModal === 'quote'} onClose={closeModal} title={t('modalQuoteTitle')}>
         <QuoteForm onSuccess={handleQuoteSuccess} />
       </Modal>
 
       {/* Schedule Modal */}
-      <Modal isOpen={activeModal === 'schedule'} onClose={closeModal} title="Schedule a Visit">
+      <Modal isOpen={activeModal === 'schedule'} onClose={closeModal} title={t('modalScheduleTitle')}>
         <ScheduleForm onSuccess={handleScheduleSuccess} />
       </Modal>
 
       {/* Success Modals */}
       <Modal isOpen={activeModal === 'quote-success'} onClose={closeModal}>
-        {renderSuccessState("Quote Request Received!", "Thanks! We're reviewing your details and will send a quote shortly.")}
+        {renderSuccessState(t('modalQuoteSuccessTitle'), t('modalQuoteSuccessDesc'))}
       </Modal>
 
       <Modal isOpen={activeModal === 'schedule-success'} onClose={closeModal}>
-        {renderSuccessState("Visit Scheduled!", "We'll be in touch to confirm your visit shortly.")}
+        {renderSuccessState(t('modalScheduleSuccessTitle'), t('modalScheduleSuccessDesc'))}
       </Modal>
     </div>
   );

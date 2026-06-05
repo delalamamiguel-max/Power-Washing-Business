@@ -1,8 +1,11 @@
 import React from 'react';
+import { useLanguage } from '../../context/LanguageContext';
 import GlassButton from '../ui/GlassButton';
 import { CheckCircle2 } from 'lucide-react';
 
 const ServicesSection = ({ onOpenQuote }) => {
+  const { t } = useLanguage();
+
   const residential = [
     'Driveways', 'Full exterior house washing', 'Roof washing', 
     'Patios and decks', 'Walkways', 'Pool areas', 
@@ -35,7 +38,7 @@ const ServicesSection = ({ onOpenQuote }) => {
             />
           </div>
           <div className="split-content">
-            <h3 style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>Residential Exterior Cleaning</h3>
+            <h3 style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>{t('resTitle')}</h3>
             <p style={{ marginBottom: '1.5rem', color: 'var(--color-text-light)' }}>
               Restore your home's curb appeal safely and effectively. We treat every home like our own, ensuring delicate surfaces are washed gently and tough concrete is power washed thoroughly.
             </p>
@@ -58,7 +61,7 @@ const ServicesSection = ({ onOpenQuote }) => {
         {/* Commercial Row */}
         <div className="split-row reverse">
           <div className="split-content">
-            <h3 style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>Commercial Exterior Cleaning</h3>
+            <h3 style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>{t('comTitle')}</h3>
             <p style={{ marginBottom: '1.5rem', color: 'var(--color-text-light)' }}>
               Make a great first impression. We handle high-traffic areas, large buildings, and routine maintenance to keep your business looking professional and inviting year-round.
             </p>

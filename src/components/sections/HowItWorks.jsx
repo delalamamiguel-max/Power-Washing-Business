@@ -1,6 +1,9 @@
 import React from 'react';
+import { useLanguage } from '../../context/LanguageContext';
 
 const HowItWorks = () => {
+  const { t } = useLanguage();
+
   const steps = [
     { num: '1', title: 'Request a Quote', desc: 'Fill out our fast online form or give us a call.' },
     { num: '2', title: 'Schedule a Visit', desc: 'We\'ll confirm the scope and provide a transparent price.' },
@@ -12,7 +15,7 @@ const HowItWorks = () => {
     <section className="section" style={{ backgroundColor: 'var(--color-white)' }}>
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-          <h2>How It Works</h2>
+          <h2>{t('howTitle')}</h2>
           <p>Four simple steps to a cleaner property.</p>
         </div>
         <div className="grid-steps">

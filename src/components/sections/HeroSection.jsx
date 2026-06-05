@@ -1,21 +1,23 @@
 import React from 'react';
 import GlassButton from '../ui/GlassButton';
+import { useLanguage } from '../../context/LanguageContext';
 
 const HeroSection = ({ onOpenQuote, onOpenSchedule }) => {
+  const { t } = useLanguage();
   return (
     <section style={styles.hero}>
       <div className="container" style={styles.container}>
         <div style={styles.content}>
-          <h1 style={styles.headline}>Make Your Property Shine Like New</h1>
+          <h1 style={styles.headline}>{t('heroTitle')}</h1>
           <p style={styles.subhead}>
-            Premium residential and commercial exterior power washing. Fast, friendly, and satisfaction guaranteed.
+            {t('heroSubtitle')}
           </p>
           <div style={styles.actions}>
             <GlassButton variant="primary" onClick={onOpenQuote} style={{ fontSize: '1.1rem', padding: '1rem 2rem' }}>
-              Get a Free Quote
+              {t('heroBtnQuote')}
             </GlassButton>
             <GlassButton variant="secondary" onClick={onOpenSchedule} style={{ fontSize: '1.1rem', padding: '1rem 2rem' }}>
-              Schedule a Visit
+              {t('heroBtnSchedule')}
             </GlassButton>
           </div>
         </div>

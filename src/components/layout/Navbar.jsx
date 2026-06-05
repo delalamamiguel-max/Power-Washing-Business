@@ -1,8 +1,10 @@
 import React from 'react';
 import GlassButton from '../ui/GlassButton';
 import { Droplets } from 'lucide-react';
+import { useLanguage } from '../../context/LanguageContext';
 
 const Navbar = ({ onOpenQuote, onOpenSchedule }) => {
+  const { language, toggleLanguage, t } = useLanguage();
   return (
     <nav style={styles.nav}>
       <div className="container nav-container">
@@ -12,11 +14,14 @@ const Navbar = ({ onOpenQuote, onOpenSchedule }) => {
         </div>
         
         <div className="nav-actions">
+          <button onClick={toggleLanguage} style={styles.langToggle}>
+            {language === 'en' ? 'ES' : 'EN'}
+          </button>
           <GlassButton variant="secondary" onClick={onOpenSchedule}>
-            Schedule Visit
+            {t('navSchedule')}
           </GlassButton>
           <GlassButton variant="primary" onClick={onOpenQuote}>
-            Get a Quote
+            {t('navGetQuote')}
           </GlassButton>
         </div>
       </div>
@@ -45,6 +50,17 @@ const styles = {
     fontWeight: '800',
     color: 'var(--color-text-main)',
     letterSpacing: '-0.5px',
+  },
+  langToggle: {
+    background: 'none',
+    border: 'none',
+    cursor: 'pointer',
+    fontSize: '0.95rem',
+    fontWeight: '700',
+    color: 'var(--color-navy)',
+    padding: '0.5rem',
+    borderRadius: '4px',
+    transition: 'background 0.2s',
   }
 };
 

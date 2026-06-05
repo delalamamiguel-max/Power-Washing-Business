@@ -1,20 +1,18 @@
 import React from 'react';
 import GlassButton from '../ui/GlassButton';
+import { useLanguage } from '../../context/LanguageContext';
 
-const FinalCTA = ({ onOpenQuote, onOpenSchedule }) => {
+const FinalCTA = ({ onOpenQuote }) => {
+  const { t } = useLanguage();
+
   return (
     <section className="section" style={styles.section}>
-      <div className="container" style={{ textAlign: 'center' }}>
-        <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', marginBottom: '1rem' }}>Ready for a Cleaner Property?</h2>
-        <p style={{ fontSize: '1.25rem', color: 'var(--color-text-light)', marginBottom: '2.5rem', maxWidth: '600px', margin: '0 auto 2.5rem auto' }}>
-          Get your free, no-obligation quote today and see how we can restore your surfaces to like-new condition.
-        </p>
-        <div style={styles.actions}>
-          <GlassButton variant="primary" onClick={onOpenQuote} style={{ fontSize: '1.1rem', padding: '1rem 2rem' }}>
-            Get a Free Quote
-          </GlassButton>
-          <GlassButton variant="secondary" onClick={onOpenSchedule} style={{ fontSize: '1.1rem', padding: '1rem 2rem' }}>
-            Schedule a Visit
+      <div className="container" style={styles.container}>
+        <div style={styles.card}>
+          <h2 style={{ marginBottom: '1.5rem', color: 'var(--color-navy)' }}>{t('ctaTitle')}</h2>
+          <p style={styles.subtitle}>{t('ctaSubtitle')}</p>
+          <GlassButton variant="primary" onClick={onOpenQuote} style={{ fontSize: '1.1rem', padding: '1rem 2.5rem' }}>
+            {t('ctaBtn')}
           </GlassButton>
         </div>
       </div>

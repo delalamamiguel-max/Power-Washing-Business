@@ -2,9 +2,13 @@ import React, { useState } from 'react';
 import GlassButton from '../ui/GlassButton';
 
 const ScheduleForm = ({ onSuccess }) => {
+  const { t } = useLanguage();
+
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = (e) => {
+  const { t } = useLanguage();
+
     e.preventDefault();
     setLoading(true);
     setTimeout(() => {
@@ -23,8 +27,8 @@ const ScheduleForm = ({ onSuccess }) => {
         <div style={styles.group}>
           <label style={styles.label}>Property Type</label>
           <select style={styles.input} required>
-            <option value="residential">Residential</option>
-            <option value="commercial">Commercial</option>
+            <option value="residential">{t('priceResTitle')}</option>
+            <option value="commercial">{t('priceComTitle')}</option>
           </select>
         </div>
       </div>

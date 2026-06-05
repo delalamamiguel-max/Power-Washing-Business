@@ -1,23 +1,25 @@
 import React from 'react';
-import { Award, Home, ThumbsUp, ShieldCheck } from 'lucide-react';
+import { ShieldCheck, ThumbsUp, Leaf } from 'lucide-react';
+import { useLanguage } from '../../context/LanguageContext';
 
 const TrustBar = () => {
-  const items = [
-    { icon: Home, text: 'Locally Owned' },
-    { icon: ShieldCheck, text: 'Free Estimates' },
-    { icon: Award, text: 'Residential & Commercial' },
-    { icon: ThumbsUp, text: 'Satisfaction Focused' },
-  ];
+  const { t } = useLanguage();
 
   return (
     <div style={styles.wrapper}>
       <div className="container" style={styles.container}>
-        {items.map((item, idx) => (
-          <div key={idx} style={styles.item}>
-            <item.icon size={24} color="var(--color-aqua)" />
-            <span style={styles.text}>{item.text}</span>
-          </div>
-        ))}
+        <div style={styles.item}>
+          <ShieldCheck color="var(--color-aqua)" size={24} />
+          <span style={styles.text}>{t('trustLicensed')}</span>
+        </div>
+        <div style={styles.item}>
+          <ThumbsUp color="var(--color-aqua)" size={24} />
+          <span style={styles.text}>{t('trustSatisfaction')}</span>
+        </div>
+        <div style={styles.item}>
+          <Leaf color="var(--color-aqua)" size={24} />
+          <span style={styles.text}>{t('trustEco')}</span>
+        </div>
       </div>
     </div>
   );
