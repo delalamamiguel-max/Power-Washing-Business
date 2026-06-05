@@ -2,10 +2,10 @@ import React from 'react';
 
 const Gallery = () => {
   const images = [
-    { src: 'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&q=80', alt: 'Clean residential driveway' },
-    { src: 'https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&q=80', alt: 'House exterior and siding washing' },
-    { src: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80', alt: 'Commercial building exterior cleaning' },
-    { src: 'https://images.unsplash.com/photo-1576013551627-1430992080a9?auto=format&fit=crop&q=80', alt: 'Clean patio and pool deck' },
+    { src: '/gallery-1.png', alt: 'Clean residential driveway' },
+    { src: '/gallery-2.png', alt: 'Commercial building exterior cleaning' },
+    { src: '/gallery-3.png', alt: 'Craftsman style house exterior washing' },
+    { src: '/gallery-4.png', alt: 'Modern commercial parking area cleaning' },
   ];
 
   return (

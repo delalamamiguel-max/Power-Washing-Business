@@ -10,7 +10,7 @@ const PricingGuide = () => {
           <p>No hidden fees. Every exterior project is unique, but here is what you can expect.</p>
         </div>
         <div className="grid-cards" style={{ maxWidth: '800px', margin: '0 auto' }}>
-          <GlassCard padding="3rem" style={{ textAlign: 'center' }}>
+          <GlassCard padding="4rem 3rem" style={{ textAlign: 'center' }}>
             <h3 style={{ marginBottom: '0.5rem' }}>Residential</h3>
             <div style={styles.price}>
               <span style={styles.currency}>$</span>
@@ -25,7 +25,7 @@ const PricingGuide = () => {
             </ul>
           </GlassCard>
 
-          <GlassCard padding="3rem" style={{ textAlign: 'center' }}>
+          <GlassCard padding="4rem 3rem" style={{ textAlign: 'center' }}>
             <h3 style={{ marginBottom: '0.5rem' }}>Commercial</h3>
             <div style={styles.price}>
               <span style={styles.amount} style={{ fontSize: '2.5rem', fontWeight: '800' }}>Custom Quote</span>
@@ -72,8 +72,9 @@ const styles = {
     textAlign: 'left',
     display: 'flex',
     flexDirection: 'column',
-    gap: '0.75rem',
+    gap: '1.25rem',
     color: 'var(--color-text-main)',
+    lineHeight: '1.6',
   }
 };
 
