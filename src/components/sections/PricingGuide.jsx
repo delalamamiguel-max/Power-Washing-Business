@@ -12,8 +12,8 @@ const PricingGuide = () => {
           <h2>{t('priceTitle')}</h2>
           <p>{t('priceSubtitle')}</p>
         </div>
-        <div className="grid-cards" style={{ maxWidth: '850px', margin: '0 auto' }}>
-          <GlassCard padding="3rem 2.5rem" style={{ textAlign: 'center' }}>
+        <div className="grid-cards" style={{ maxWidth: '950px', margin: '0 auto' }}>
+          <GlassCard padding="3rem 3.5rem" style={{ textAlign: 'center' }}>
             <h3 style={{ marginBottom: '0.5rem' }}>{t('priceResTitle')}</h3>
             <div style={styles.price}>
               <span style={styles.currency}>$</span>
@@ -37,10 +37,10 @@ const PricingGuide = () => {
             </ul>
           </GlassCard>
 
-          <GlassCard padding="3rem 2.5rem" style={{ textAlign: 'center' }}>
+          <GlassCard padding="3rem 3.5rem" style={{ textAlign: 'center' }}>
             <h3 style={{ marginBottom: '0.5rem' }}>{t('priceComTitle')}</h3>
             <div style={styles.price}>
-              <span style={{ fontSize: '2.5rem', fontWeight: '800', lineHeight: '1.4' }}>{t('priceComQuote')}</span>
+              <span style={{ fontSize: '2.2rem', fontWeight: '800', lineHeight: '1.4' }}>{t('priceComQuote')}</span>
             </div>
             <p style={styles.subtitle}>{t('priceComDesc')}</p>
             <ul style={styles.factors}>
@@ -74,45 +74,50 @@ const styles = {
     minHeight: '3.5rem', // Keeps both price areas vertically aligned
   },
   currency: {
-    fontSize: '1.5rem',
+    fontSize: '1.25rem',
     fontWeight: '700',
-    marginTop: '0.25rem',
+    marginTop: '0.4rem',
   },
   amount: {
-    fontSize: '3.5rem',
+    fontSize: '3rem',
     fontWeight: '800',
     lineHeight: '1',
   },
   plus: {
-    fontSize: '1.75rem',
+    fontSize: '1.5rem',
     fontWeight: '700',
   },
   subtitle: {
     marginBottom: '2rem',
-    fontSize: '0.95rem',
+    fontSize: '0.9rem',
     color: 'var(--color-text-main)',
     opacity: 0.8,
+    lineHeight: '1.5',
+    padding: '0 0.5rem',
   },
   factors: {
     listStyle: 'none',
-    paddingTop: '2rem',
+    padding: '2rem 0 0 0',
+    margin: 0,
     borderTop: '1px solid var(--glass-border)',
     textAlign: 'left',
     display: 'flex',
     flexDirection: 'column',
-    gap: '1rem',
+    gap: '1.25rem',
     color: 'var(--color-text-main)',
   },
   listItem: {
     display: 'flex',
     alignItems: 'flex-start',
     gap: '0.75rem',
-    fontSize: '0.95rem',
+    fontSize: '0.9rem',
     lineHeight: '1.4',
   },
   icon: {
     flexShrink: 0,
-    marginTop: '2px',
+    marginTop: '1px',
+    width: '18px',
+    height: '18px',
   }
 };
 
